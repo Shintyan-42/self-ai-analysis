@@ -17,7 +17,11 @@ export const metadata: Metadata = {
   description: "15問の質問に答えて、AIが最適なキャリアロールモデルと進路を提案します。地方の中高生向けのキャリア発見アプリです。",
   keywords: ["キャリア", "進路", "AI", "地方", "中高生", "職業", "大学"],
   authors: [{ name: "AI Career App" }],
-  viewport: "width=device-width, initial-scale=1",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

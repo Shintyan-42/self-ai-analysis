@@ -155,6 +155,49 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
               ))}
             </div>
           </div>
+
+          {/* 具体的な職業推薦 */}
+          {analysis.roleModel.specificCareers && analysis.roleModel.specificCareers.length > 0 && (
+            <div className="mt-6">
+              <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                <span className="text-orange-500 mr-2">💼</span>
+                おすすめの具体的な職業
+              </h4>
+              <div className="grid md:grid-cols-1 gap-4">
+                {analysis.roleModel.specificCareers.map((career, index) => (
+                  <div key={index} className="bg-orange-50 rounded-lg p-4 border border-orange-200">
+                    <div className="flex justify-between items-start mb-2">
+                      <h5 className="font-semibold text-gray-800 text-lg">{career.name}</h5>
+                      <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-medium">
+                        {career.salary}
+                      </span>
+                    </div>
+                    <p className="text-gray-700 mb-3">{career.description}</p>
+                    
+                    <div className="grid md:grid-cols-2 gap-3">
+                      <div>
+                        <h6 className="font-medium text-gray-800 mb-1">必要なスキル・資格</h6>
+                        <ul className="space-y-1">
+                          {career.requirements.map((req, reqIndex) => (
+                            <li key={reqIndex} className="flex items-center text-sm text-gray-600">
+                              <span className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2"></span>
+                              {req}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h6 className="font-medium text-gray-800 mb-1">地方での就職可能性</h6>
+                        <p className="text-sm text-gray-600 bg-white rounded p-2 border border-orange-100">
+                          {career.localAvailability}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* キャリアパス */}

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Header from '@/components/Header';
-import EnhancedResultsScreen from '@/components/EnhancedResultsScreen';
+import CareerQuizResults from '@/components/CareerQuizResults';
 import HistoryScreen from '@/components/HistoryScreen';
 import CareerQuiz from '@/components/CareerQuiz';
 
@@ -106,8 +106,8 @@ export default function Home() {
         )}
         
         {currentState === 'results' && quizResults && (
-          <EnhancedResultsScreen 
-            results={quizResults} 
+          <CareerQuizResults 
+            answers={quizResults.answers} 
             onRestart={handleRestart}
           />
         )}
