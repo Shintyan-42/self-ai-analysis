@@ -281,7 +281,30 @@ function getDemoCareerAnalysis(answers: { [key: string]: string }): CareerAnalys
         characteristics: ["技術への深い関心", "創造的な問題解決力", "継続的な学習意欲"],
         strengths: ["論理的思考", "技術的理解力", "新しいものへの適応力"],
         challenges: ["最新情報へのアクセス", "地方での技術コミュニティ参加"],
-        localOpportunities: ["地方企業のDX支援", "地域課題のIT解決", "リモートワーク活用"]
+        localOpportunities: ["地方企業のDX支援", "地域課題のIT解決", "リモートワーク活用"],
+        specificCareers: [
+          {
+            name: "システムエンジニア",
+            description: "企業のITシステムの設計・開発・保守を行う技術者",
+            salary: "年収400万円〜800万円（地方では350万円〜600万円）",
+            requirements: ["プログラミングスキル", "システム設計能力", "コミュニケーション能力"],
+            localAvailability: "地方でも需要が高い、リモートワーク可能"
+          },
+          {
+            name: "Webデザイナー",
+            description: "Webサイトのデザインとユーザー体験を担当するクリエイター",
+            salary: "年収300万円〜600万円（地方では250万円〜500万円）",
+            requirements: ["デザインスキル", "HTML/CSS/JavaScript", "UI/UX知識"],
+            localAvailability: "フリーランスとして地方からでも活動可能"
+          },
+          {
+            name: "データサイエンティスト",
+            description: "データを分析してビジネス課題を解決する専門家",
+            salary: "年収500万円〜1000万円（地方では400万円〜800万円）",
+            requirements: ["統計学・数学", "プログラミング（Python/R）", "ビジネス理解"],
+            localAvailability: "リモートワーク中心、地方企業でも需要増加"
+          }
+        ]
       },
       careerPath: {
         shortTerm: ["プログラミング基礎学習", "地域IT企業でのインターン", "オンライン学習の活用"],
@@ -330,7 +353,30 @@ function getDemoCareerAnalysis(answers: { [key: string]: string }): CareerAnalys
         characteristics: ["人とのつながり重視", "社会貢献への強い関心", "地域愛"],
         strengths: ["コミュニケーション能力", "共感力", "リーダーシップ"],
         challenges: ["地方での雇用機会", "キャリア発展の選択肢"],
-        localOpportunities: ["地方自治体職員", "地域企業の管理職", "NPO・NGO活動"]
+        localOpportunities: ["地方自治体職員", "地域企業の管理職", "NPO・NGO活動"],
+        specificCareers: [
+          {
+            name: "地方公務員",
+            description: "地方自治体で住民の生活を支える公務員",
+            salary: "年収350万円〜600万円（安定した収入）",
+            requirements: ["公務員試験合格", "地域への理解", "奉仕精神"],
+            localAvailability: "地方での需要が高い、安定した職業"
+          },
+          {
+            name: "学校教員",
+            description: "子どもたちの教育と成長を支援する教育者",
+            salary: "年収300万円〜550万円（地方では手当ても充実）",
+            requirements: ["教員免許", "教育への情熱", "コミュニケーション能力"],
+            localAvailability: "地方でも需要が高い、地域密着型の職業"
+          },
+          {
+            name: "社会福祉士",
+            description: "福祉の専門知識で人々の生活を支援する専門職",
+            salary: "年収280万円〜450万円（地方では手当てあり）",
+            requirements: ["社会福祉士資格", "相談援助技術", "共感力"],
+            localAvailability: "地方での需要増加、地域密着型の支援"
+          }
+        ]
       },
       careerPath: {
         shortTerm: ["地域ボランティア活動", "リーダーシップ研修参加", "地域イベント企画"],
@@ -379,7 +425,30 @@ function getDemoCareerAnalysis(answers: { [key: string]: string }): CareerAnalys
         characteristics: ["幅広い興味関心", "適応力", "継続的な学習"],
         strengths: ["柔軟性", "学習能力", "バランス感覚"],
         challenges: ["専門性の確立", "キャリアの方向性決定"],
-        localOpportunities: ["地方企業の総合職", "公務員", "多様な専門職"]
+        localOpportunities: ["地方企業の総合職", "公務員", "多様な専門職"],
+        specificCareers: [
+          {
+            name: "総合職（地方企業）",
+            description: "営業、企画、管理など幅広い業務を担当する総合職",
+            salary: "年収300万円〜550万円（地方では手当ても充実）",
+            requirements: ["コミュニケーション能力", "学習意欲", "適応力"],
+            localAvailability: "地方企業での需要が高い、多様な経験が積める"
+          },
+          {
+            name: "公務員",
+            description: "地方自治体で多様な業務を担当する公務員",
+            salary: "年収350万円〜600万円（安定した収入）",
+            requirements: ["公務員試験合格", "地域への理解", "奉仕精神"],
+            localAvailability: "地方での需要が高い、安定した職業"
+          },
+          {
+            name: "事務職",
+            description: "企業の事務処理や管理業務を担当する職種",
+            salary: "年収250万円〜450万円（地方では手当てあり）",
+            requirements: ["基本的なPCスキル", "正確性", "責任感"],
+            localAvailability: "地方でも需要が高い、安定した職業"
+          }
+        ]
       },
       careerPath: {
         shortTerm: ["様々な分野の基礎学習", "地域インターンシップ", "資格取得検討"],

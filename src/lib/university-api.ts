@@ -196,8 +196,8 @@ function parseEStatData(data: any): University[] {
     
     if (datalist && Array.isArray(datalist)) {
       datalist.forEach((item: any) => {
-        if (item && item.@attributes) {
-          const attrs = item.@attributes;
+        if (item && item['@attributes']) {
+          const attrs = item['@attributes'];
           if (attrs.学校名 && attrs.学校名.includes('大学')) {
             universities.push({
               id: attrs.学校コード || `estat_${attrs.学校名}`,
