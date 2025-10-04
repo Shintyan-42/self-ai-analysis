@@ -248,11 +248,36 @@ ${formattedAnswers}
 
     // JSONレスポンスをパース
     try {
-      const parsedResponse = JSON.parse(responseText);
+      // Markdownのコードブロック形式を処理
+      let cleanResponse = responseText.trim();
+      
+      // ```json と ``` を削除
+      if (cleanResponse.startsWith('```json')) {
+        cleanResponse = cleanResponse.replace(/^```json\s*/, '').replace(/\s*```$/, '');
+      } else if (cleanResponse.startsWith('```')) {
+        cleanResponse = cleanResponse.replace(/^```\s*/, '').replace(/\s*```$/, '');
+      }
+      
+      // 末尾の不完全なJSONを処理（最後のカンマや不完全な文字列を削除）
+      cleanResponse = cleanResponse.replace(/,\s*$/, ''); // 末尾のカンマを削除
+      cleanResponse = cleanResponse.replace(/,\s*"[^"]*$/, ''); // 不完全な文字列を削除
+      cleanResponse = cleanResponse.replace(/,\s*[^,}]*$/, ''); // 不完全な値を削除
+      
+      // 不完全なJSONオブジェクトを閉じる
+      if (cleanResponse.includes('{') && !cleanResponse.endsWith('}')) {
+        const openBraces = (cleanResponse.match(/\{/g) || []).length;
+        const closeBraces = (cleanResponse.match(/\}/g) || []).length;
+        const missingBraces = openBraces - closeBraces;
+        cleanResponse += '}'.repeat(missingBraces);
+      }
+      
+      const parsedResponse = JSON.parse(cleanResponse);
+      console.log('✅ AI分析成功 - Gemini API使用');
       return parsedResponse;
     } catch (jsonError) {
       console.error('Error parsing career analysis response JSON:', jsonError);
       console.error('Raw AI response:', responseText);
+      console.log('⚠️ デモデータを使用します');
       return getDemoCareerAnalysis(answers);
     }
 

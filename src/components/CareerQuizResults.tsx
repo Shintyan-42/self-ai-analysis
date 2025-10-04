@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { analyzeCareerQuiz, CareerAnalysisResponse } from '@/lib/career-analysis';
+import { analyzeCareerQuiz, CareerAnalysisResponse } from '@/lib/career-analysis-simple';
 
 interface CareerQuizResultsProps {
   answers: { [key: string]: string };
@@ -72,6 +72,17 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
     );
   }
 
+  if (!analysis) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-4">
+        <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-2xl text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-600 mx-auto mb-6"></div>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">分析結果を読み込み中...</h2>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-4">
       <div className="max-w-4xl mx-auto">
@@ -113,7 +124,7 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
                 あなたの特徴
               </h4>
               <ul className="space-y-2">
-                {analysis.roleModel.characteristics.map((char, index) => (
+                {(analysis.roleModel.characteristics || []).map((char, index) => (
                   <li key={index} className="flex items-start">
                     <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span className="text-gray-700">{char}</span>
@@ -130,7 +141,7 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
                 あなたの強み
               </h4>
               <ul className="space-y-2">
-                {analysis.roleModel.strengths.map((strength, index) => (
+                {(analysis.roleModel.strengths || []).map((strength, index) => (
                   <li key={index} className="flex items-start">
                     <span className="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span className="text-gray-700">{strength}</span>
@@ -148,7 +159,7 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
               地方での機会
             </h4>
             <div className="flex flex-wrap gap-2">
-              {analysis.roleModel.localOpportunities.map((opportunity, index) => (
+              {(analysis.roleModel.localOpportunities || []).map((opportunity, index) => (
                 <span key={index} className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
                   {opportunity}
                 </span>
@@ -317,16 +328,18 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
               </div>
             </div>
 
-            <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-3">その他の選択肢</h4>
-              <div className="flex flex-wrap gap-2">
-                {analysis.education.alternatives.map((alt, index) => (
-                  <span key={index} className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
-                    {alt}
-                  </span>
-                ))}
+            {analysis.education.alternatives && analysis.education.alternatives.length > 0 && (
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800 mb-3">その他の選択肢</h4>
+                <div className="flex flex-wrap gap-2">
+                  {analysis.education.alternatives.map((alt, index) => (
+                    <span key={index} className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+                      {alt}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
 
