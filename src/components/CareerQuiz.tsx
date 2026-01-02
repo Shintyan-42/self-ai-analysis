@@ -164,7 +164,7 @@ export default function CareerQuiz({ onComplete }: CareerQuizProps) {
         {/* ヘッダー */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">キャリア発見クイズ</h1>
-          <p className="text-gray-600">あなたにぴったりのキャリアロールモデルを見つけましょう</p>
+          <p className="text-gray-600 font-bold">あなたにぴったりのキャリアロールモデルを見つけましょう</p>
         </div>
 
         {/* プログレスバー */}
@@ -175,10 +175,10 @@ export default function CareerQuiz({ onComplete }: CareerQuizProps) {
                 <span className="text-purple-600 font-bold text-sm">{currentQuestion?.step || 1}</span>
               </div>
               <div>
-                <h2 className="text-lg font-semibold text-gray-800">
+                <h2 className="text-lg font-bold text-gray-800">
                   {getStepTitle(currentQuestion?.step || 1)}
                 </h2>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-500 font-bold">
                   質問 {Object.keys(answers).length + 1} / 15
                 </p>
               </div>
@@ -187,7 +187,7 @@ export default function CareerQuiz({ onComplete }: CareerQuizProps) {
               <span className="text-2xl font-bold text-purple-600">
                 {Math.round(progress)}%
               </span>
-              <p className="text-xs text-gray-500">完了</p>
+              <p className="text-xs text-gray-500 font-bold">完了</p>
             </div>
           </div>
           
@@ -221,7 +221,7 @@ export default function CareerQuiz({ onComplete }: CareerQuizProps) {
                         {String.fromCharCode(65 + index)}
                       </span>
                     </div>
-                    <span className="text-gray-800 font-medium text-lg group-hover:text-purple-800 transition-colors duration-300">
+                    <span className="text-gray-800 font-bold text-lg group-hover:text-purple-800 transition-colors duration-300">
                       {option.label}
                     </span>
                   </div>
@@ -233,7 +233,7 @@ export default function CareerQuiz({ onComplete }: CareerQuizProps) {
 
         {/* フッター */}
         <div className="text-center">
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm font-bold">
             あなたの回答は安全に保存され、分析にのみ使用されます
           </p>
         </div>
