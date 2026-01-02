@@ -32,18 +32,18 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-2xl text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-600 mx-auto mb-6"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-purple-600 mx-auto mb-6"></div>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">AI分析中...</h2>
           <p className="text-gray-600 mb-6">あなたの回答を分析して、最適なキャリアロールモデルを見つけています</p>
-          <div className="bg-blue-50 rounded-xl p-4">
+          <div className="bg-purple-50 rounded-xl p-4">
             <div className="flex items-center justify-center space-x-2">
-              <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce"></div>
-              <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
-              <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+              <div className="w-3 h-3 bg-purple-500 rounded-full animate-bounce"></div>
+              <div className="w-3 h-3 bg-purple-500 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+              <div className="w-3 h-3 bg-purple-500 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
             </div>
-            <p className="text-sm text-blue-600 mt-2">通常10秒以内で完了します</p>
+            <p className="text-sm text-purple-600 mt-2">通常10秒以内で完了します</p>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
 
   if (error || !analysis) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-2xl text-center">
           <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,7 +63,7 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
           <p className="text-gray-600 mb-6">{error || '分析結果を取得できませんでした。'}</p>
           <button
             onClick={onRestart}
-            className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
+            className="bg-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-purple-700 transition-colors"
           >
             もう一度診断する
           </button>
@@ -74,9 +74,9 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
 
   if (!analysis) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-2xl text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-600 mx-auto mb-6"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-purple-600 mx-auto mb-6"></div>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">分析結果を読み込み中...</h2>
         </div>
       </div>
@@ -84,7 +84,7 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 p-4">
       <div className="max-w-4xl mx-auto">
         {/* ヘッダー */}
         <div className="text-center mb-8">
@@ -104,13 +104,13 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
         {/* キャリアロールモデル */}
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
           <div className="flex items-center mb-6">
-            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-              <span className="text-blue-600 text-xl">🎯</span>
+            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+              <span className="text-purple-600 text-xl">🎯</span>
             </div>
             <h2 className="text-2xl font-bold text-gray-800">あなたのキャリアロールモデル</h2>
           </div>
           
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 mb-6">
+          <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl p-6 mb-6">
             <h3 className="text-xl font-semibold text-gray-800 mb-2">{analysis.roleModel.title}</h3>
             <p className="text-gray-700 leading-relaxed">{analysis.roleModel.description}</p>
           </div>
@@ -126,7 +126,7 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
               <ul className="space-y-2">
                 {(analysis.roleModel.characteristics || []).map((char, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span className="text-gray-700">{char}</span>
                   </li>
                 ))}
@@ -223,16 +223,16 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
           <div className="space-y-6">
             <div>
               <h4 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-blue-600 font-bold text-sm">1</span>
+                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-purple-600 font-bold text-sm">1</span>
                 </div>
                 短期目標（1-3年）
               </h4>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-purple-50 rounded-lg p-4">
                 <ul className="space-y-2">
                   {analysis.careerPath.shortTerm.map((goal, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span className="text-gray-700">{goal}</span>
                     </li>
                   ))}
@@ -308,18 +308,18 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
               <h4 className="text-lg font-semibold text-gray-800 mb-3">おすすめの大学・学部</h4>
               <div className="space-y-4">
                 {analysis.education.universities.map((uni, index) => (
-                  <div key={index} className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                  <div key={index} className="bg-purple-50 rounded-lg p-4 border border-purple-200">
                     <div className="flex justify-between items-start mb-2">
                       <h5 className="font-semibold text-gray-800 text-lg">{uni.name}</h5>
-                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+                      <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-medium">
                         {uni.location}
                       </span>
                     </div>
                     <p className="text-gray-700 font-medium mb-2">{uni.department}</p>
                     <p className="text-gray-600 text-sm mb-2">{uni.reason}</p>
                     {uni.admissionInfo && (
-                      <div className="bg-white rounded p-2 border border-blue-100">
-                        <p className="text-xs text-blue-700 font-medium">入試情報</p>
+                      <div className="bg-white rounded p-2 border border-purple-100">
+                        <p className="text-xs text-purple-700 font-medium">入試情報</p>
                         <p className="text-xs text-gray-600">{uni.admissionInfo}</p>
                       </div>
                     )}
@@ -354,7 +354,7 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
           
           <div className="space-y-4">
             {analysis.insights.map((insight, index) => (
-              <div key={index} className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-4 border-l-4 border-purple-500">
+              <div key={index} className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg p-4 border-l-4 border-purple-500">
                 <p className="text-gray-700 leading-relaxed">{insight}</p>
               </div>
             ))}
@@ -366,7 +366,7 @@ export default function CareerQuizResults({ answers, onRestart }: CareerQuizResu
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={onRestart}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               もう一度診断する
             </button>

@@ -56,27 +56,27 @@ export default function RealTimeAnalysis({
   }
 
   return (
-    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 mb-4 border border-blue-200">
+    <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg p-4 mb-4 border border-purple-200">
       <div className="flex items-center mb-3">
         <div className="flex items-center">
           <div className={`w-2 h-2 rounded-full mr-2 ${
             isAnalyzing ? 'bg-yellow-500 animate-pulse' : 'bg-green-500'
           }`}></div>
-          <span className="text-sm font-medium text-blue-800">
+          <span className="text-sm font-medium text-purple-800">
             {isAnalyzing ? 'AI分析中...' : 'AI分析結果'}
           </span>
         </div>
         <div className="ml-auto">
-          <div className="text-xs text-blue-600">
+          <div className="text-xs text-purple-600">
             {progress}% 完了
           </div>
         </div>
       </div>
 
       {/* 進捗バー */}
-      <div className="w-full bg-blue-200 rounded-full h-1 mb-3">
+      <div className="w-full bg-purple-200 rounded-full h-1 mb-3">
         <div 
-          className="bg-blue-600 h-1 rounded-full transition-all duration-500"
+          className="bg-purple-600 h-1 rounded-full transition-all duration-500"
           style={{ width: `${progress}%` }}
         ></div>
       </div>
@@ -86,19 +86,19 @@ export default function RealTimeAnalysis({
         {insights.map((insight, index) => (
           <div 
             key={index}
-            className="flex items-start space-x-2 text-sm text-blue-700"
+            className="flex items-start space-x-2 text-sm text-purple-700"
           >
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
             <span>{insight}</span>
           </div>
         ))}
       </div>
 
       {/* 分析ステータス */}
-      <div className="mt-3 text-xs text-blue-600">
+      <div className="mt-3 text-xs text-purple-600">
         {isAnalyzing ? (
           <span className="flex items-center">
-            <svg className="animate-spin -ml-1 mr-2 h-3 w-3 text-blue-500" fill="none" viewBox="0 0 24 24">
+            <svg className="animate-spin -ml-1 mr-2 h-3 w-3 text-purple-500" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>

@@ -106,9 +106,9 @@ export default function EnhancedResultsScreen({ results, onRestart }: EnhancedRe
             </div>
           </div>
           
-          <div className="bg-blue-50 rounded-lg p-4">
-            <h4 className="font-medium text-blue-800 mb-2">学習タイムライン</h4>
-            <p className="text-blue-700 text-sm">{enhancedAnalysis.education.timeline}</p>
+          <div className="bg-purple-50 rounded-lg p-4">
+            <h4 className="font-medium text-purple-800 mb-2">学習タイムライン</h4>
+            <p className="text-purple-700 text-sm">{enhancedAnalysis.education.timeline}</p>
           </div>
         </div>
       ) : (
@@ -178,7 +178,7 @@ export default function EnhancedResultsScreen({ results, onRestart }: EnhancedRe
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 p-4">
       <div className="max-w-4xl mx-auto">
         {/* ヘッダー */}
         <div className="text-center mb-8">
@@ -197,7 +197,7 @@ export default function EnhancedResultsScreen({ results, onRestart }: EnhancedRe
         <div className="flex justify-center space-x-4 mt-8">
           <button
             onClick={onRestart}
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
           >
             新しい分析を開始
           </button>

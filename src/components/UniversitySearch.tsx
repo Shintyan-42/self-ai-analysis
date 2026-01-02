@@ -76,7 +76,7 @@ export default function UniversitySearch({ onSelectUniversity, selectedUniversit
     return (
       <div className="bg-white rounded-2xl shadow-xl p-6">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
           <p className="text-gray-600">大学データを読み込み中...</p>
         </div>
       </div>
@@ -96,7 +96,7 @@ export default function UniversitySearch({ onSelectUniversity, selectedUniversit
             placeholder="大学名や学部名で検索..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
           />
         </div>
 
@@ -109,7 +109,7 @@ export default function UniversitySearch({ onSelectUniversity, selectedUniversit
             <select
               value={selectedPrefecture}
               onChange={(e) => setSelectedPrefecture(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
             >
               <option value="">すべて</option>
               {prefectures.map(pref => (
@@ -125,7 +125,7 @@ export default function UniversitySearch({ onSelectUniversity, selectedUniversit
             <select
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
             >
               <option value="">すべて</option>
               {types.map(type => (
@@ -147,7 +147,7 @@ export default function UniversitySearch({ onSelectUniversity, selectedUniversit
                 key={university.id}
                 className={`p-4 border rounded-lg cursor-pointer transition-colors ${
                   isSelected 
-                    ? 'border-blue-500 bg-blue-50' 
+                    ? 'border-purple-500 bg-purple-50' 
                     : 'border-gray-200 hover:border-gray-300'
                 }`}
                 onClick={() => onSelectUniversity(university)}
@@ -180,7 +180,7 @@ export default function UniversitySearch({ onSelectUniversity, selectedUniversit
                   
                   <div className="ml-4">
                     {isSelected ? (
-                      <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
                         <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
@@ -210,7 +210,7 @@ export default function UniversitySearch({ onSelectUniversity, selectedUniversit
           </h3>
           <div className="space-y-2">
             {selectedUniversities.map((university) => (
-              <div key={university.id} className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+              <div key={university.id} className="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
                 <div>
                   <span className="font-medium text-gray-800">{university.name}</span>
                   <span className="text-sm text-gray-600 ml-2">({university.type})</span>

@@ -116,7 +116,7 @@ export default function CareerQuiz({ onComplete }: CareerQuizProps) {
   // 完了画面（結果画面に遷移する前の表示）
   if (isCompleted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-2xl text-center">
           <div className="mb-6">
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -142,7 +142,7 @@ export default function CareerQuiz({ onComplete }: CareerQuizProps) {
 
           <button
             onClick={() => setShowResults(true)}
-            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl mb-4"
+            className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl mb-4"
           >
             AI分析結果を見る
           </button>
@@ -159,7 +159,7 @@ export default function CareerQuiz({ onComplete }: CareerQuizProps) {
 
   // 質問画面
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 p-4">
       <div className="max-w-4xl mx-auto">
         {/* ヘッダー */}
         <div className="text-center mb-8">
@@ -171,8 +171,8 @@ export default function CareerQuiz({ onComplete }: CareerQuizProps) {
         <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-blue-600 font-bold text-sm">{currentQuestion?.step || 1}</span>
+              <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                <span className="text-purple-600 font-bold text-sm">{currentQuestion?.step || 1}</span>
               </div>
               <div>
                 <h2 className="text-lg font-semibold text-gray-800">
@@ -184,7 +184,7 @@ export default function CareerQuiz({ onComplete }: CareerQuizProps) {
               </div>
             </div>
             <div className="text-right">
-              <span className="text-2xl font-bold text-blue-600">
+              <span className="text-2xl font-bold text-purple-600">
                 {Math.round(progress)}%
               </span>
               <p className="text-xs text-gray-500">完了</p>
@@ -193,7 +193,7 @@ export default function CareerQuiz({ onComplete }: CareerQuizProps) {
           
           <div className="w-full bg-gray-200 rounded-full h-3">
             <div 
-              className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full transition-all duration-500 ease-out"
+              className="bg-gradient-to-r from-purple-500 to-purple-600 h-3 rounded-full transition-all duration-500 ease-out"
               style={{ width: `${progress}%` }}
             ></div>
           </div>
@@ -213,15 +213,15 @@ export default function CareerQuiz({ onComplete }: CareerQuizProps) {
                 <button
                   key={option.value}
                   onClick={() => handleAnswer(currentQuestion.id, option.value)}
-                  className="w-full p-6 text-left bg-gradient-to-r from-gray-50 to-blue-50 hover:from-blue-100 hover:to-purple-100 rounded-xl border-2 border-transparent hover:border-blue-300 transition-all duration-300 group"
+                  className="w-full p-6 text-left bg-gradient-to-r from-gray-50 to-purple-50 hover:from-purple-100 hover:to-purple-200 rounded-xl border-2 border-transparent hover:border-purple-300 transition-all duration-300 group"
                 >
                   <div className="flex items-center space-x-4">
-                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center group-hover:bg-blue-500 transition-colors duration-300">
+                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center group-hover:bg-purple-500 transition-colors duration-300">
                       <span className="text-gray-600 group-hover:text-white font-semibold text-sm">
                         {String.fromCharCode(65 + index)}
                       </span>
                     </div>
-                    <span className="text-gray-800 font-medium text-lg group-hover:text-blue-800 transition-colors duration-300">
+                    <span className="text-gray-800 font-medium text-lg group-hover:text-purple-800 transition-colors duration-300">
                       {option.label}
                     </span>
                   </div>
