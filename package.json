@@ -13,7 +13,7 @@
     "@types/better-sqlite3": "^7.6.13",
     "better-sqlite3": "^12.4.1",
     "dotenv": "^17.2.3",
-    "next": "15.5.4",
+    "next": "^15.5.28",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
@@ -24,8 +24,11 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.5.4",
+    "eslint-config-next": "^15.5.28",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "sharp": "^0.35.5"
   }
 }
